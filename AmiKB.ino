@@ -1,5 +1,6 @@
 //MiSTerFPGA Amiga Keyboard interface
 // Public domain code
+// Modified Dec 2021 for the MiSTress A500 convertion kit (small changes introduced: arduino pins, mapping international key)
 // modified Jan 2021 from code released by BrainSlugs83 - https://github.com/BrainSlugs83/Amiga500-Keyboard/blob/main/AmigaKeyboard.ino
 // https://forum.arduino.cc/index.php?topic=139358.90
 // ByteMavericks / Nick: added reset code for MiSTerFGPA, and overloaded the HELP key to serve as F12, F11 and also Print screen
@@ -34,9 +35,9 @@
 
 // The next lines define which pins will be connected to where. -- Note that the LEDs cannot be directly driven, but instead need a transistor to drive them.
 
-#define A500CLK        7  // Suggested: 13 on ESP32S, 7 on Pro Micro
-#define A500SP         8  // Suggested: 12 on ESP32S, 8 on Pro Micro
-#define A500RES        9  // Suggested: 14 on ESP32S, 9 on Pro Micro
+#define A500CLK        8  // Suggested: 13 on ESP32S, 7 on Pro Micro
+#define A500SP         9  // Suggested: 12 on ESP32S, 8 on Pro Micro
+#define A500RES        10  // Suggested: 14 on ESP32S, 9 on Pro Micro
 
 // The LEDS require more current than the IO pins can produce, so use another IC to drive them (:
 #define LED_NUMLOCK    6 // Suggested: 26 on ESP32S, 6 on Pro Micro (-1 to disable)
@@ -307,15 +308,15 @@ void loop()
                   else if (keyCode <= 9) { SetKey(isConnected, '1' + (keyCode-1), pressed); }
                   else if (keyCode == 10) { SetKey(isConnected, '0', pressed); }
                   else if (keyCode == 11) { SetKey(isConnected, '-', pressed); }
-                  else if (keyCode == 12) { SetKey(isConnected, '=', pressed); }
+                  else if (keyCode == 12) { SetKey(isConnected, (61), pressed); }
                   else if (keyCode == 13) { SetKey(isConnected, '\\', pressed); }
                   else if (keyCode == 15) { SetKey(isConnected, (98 + 136), pressed); } // NUMPAD 0
                   else if (keyCode >= 16 && keyCode <= 27) { SetKey(isConnected, alpha1[keyCode - 16], pressed); }
                   else if (keyCode >= 29 && keyCode <= 31) { SetKey(isConnected, ((keyCode - 29) + 89 + 136), pressed); } // NUMPAD 1, 2, 3
                   else if (keyCode >= 32 && keyCode <= 42) { SetKey(isConnected, alpha2[keyCode - 32], pressed); }
-                  else if (keyCode == 43) { SetKey(isConnected, KEY_F1 + 11, pressed); } // RIGHT "dead key", next to Return key - Send F12
+                  else if (keyCode == 43) { SetKey(isConnected, (50 + 136), pressed); } // RIGHT international key
                   else if (keyCode >= 45 && keyCode <= 47) { SetKey(isConnected, ((keyCode - 45) + 92 + 136), pressed); } // NUMPAD 4, 5, 6
-                  else if (keyCode == 48) { SetKey(isConnected, KEY_F1 + 10, pressed); } // LEFT "dead key", between Shift and Z - Send F11
+                  else if (keyCode == 48) { SetKey(isConnected, (100 + 136), pressed); } // LEFT international key
                   else if (keyCode >= 49 && keyCode <= 58) { SetKey(isConnected, alpha3[keyCode - 49], pressed); }
                   else if (keyCode == 60) { SetKey(isConnected, (99 + 136), pressed); } // NUMPAD .
                   else if (keyCode >= 61 && keyCode <= 63) { SetKey(isConnected, ((keyCode - 61) + 95 + 136), pressed); } // NUMPAD 7, 8, 9
