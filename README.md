@@ -2,7 +2,7 @@
 A small project for Arduino Leonardo / clones to convert Native Amiga 500 keyboards into a USB keyboard, with keymap optimised for MiSTerFPGA    
 Standing on the shoulders of many!  
 
-// modified Nov 2021 for the MiSTress A500 convertion kit.
+// modified Nov 2021 for the MiSTress A500 conversion kit.
 
 // modified Jan 2021 from code released by BrainSlugs83 - https://github.com/BrainSlugs83/Amiga500-Keyboard/blob/main/AmigaKeyboard.ino  
 // https://forum.arduino.cc/index.php?topic=139358.90  
