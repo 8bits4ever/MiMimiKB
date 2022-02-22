@@ -2,6 +2,8 @@
 A small project for Arduino Leonardo / clones to convert Native Amiga 500 keyboards into a USB keyboard, with keymap optimised for MiSTerFPGA    
 Standing on the shoulders of many!  
 
+// modified Nov 2021 for the MiSTress A500 convertion kit.
+
 // modified Jan 2021 from code released by BrainSlugs83 - https://github.com/BrainSlugs83/Amiga500-Keyboard/blob/main/AmigaKeyboard.ino  
 // https://forum.arduino.cc/index.php?topic=139358.90  
 
@@ -9,9 +11,7 @@ Standing on the shoulders of many!
   
 // HELP = F12 (OSD)  
 // Ctrl-HELP = F11  
-// Shift-HELP = PRINTSCREEN  
-// Left international key (between Z and Shift) = F11  
-// Right international key (next to Return) = F12  
+// Shift-HELP = PRINTSCREEN    
 
 // Useful MisterFPGA shortcuts:  
 // - Ctrl-LSHIFT-LALT-RALT= master reset (same as reset key)  
