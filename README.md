@@ -18,6 +18,5 @@ Standing on the shoulders of many!
 // - Ctrl - Amiga- Amiga = CTRL LALT RALT = core reset  
 // Keyboard interface board with LED driver available - if interested drop me a line  
 
-If using a Pro Micro sourced from Amazon (search Pro Micro ATmega32U4 5V 16MHz as an example)and powering from USB then J1 needs bridging if you want 5V on the Pro Micro board, otherwise it goes through the regulator which means you won't be lighting up the Amiga keyboard...    
-
-DO NOT CONNECT THE AMIGA LEDS DIRECTLY TO THE PRO MICRO!  
+MiSTress board features an embedded Atmega32U4 microcontroller and a dedicated ISP header for programming. It can also be programmed using a MALE to MALE USB cable
+and the Arduino IDE, just like a ProMicro/Leonardo board. More details in the MiSTress documentation.
