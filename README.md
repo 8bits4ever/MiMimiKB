@@ -16,7 +16,6 @@ Standing on the shoulders of many!
 // Useful MisterFPGA shortcuts:  
 // - Ctrl-LSHIFT-LALT-RALT= master reset (same as reset key)  
 // - Ctrl - Amiga- Amiga = CTRL LALT RALT = core reset  
-// Keyboard interface board with LED driver available - if interested drop me a line  
 
 MiSTress board features an embedded Atmega32U4 microcontroller and a dedicated ISP header for programming. It can also be programmed using a MALE to MALE USB cable
 and the Arduino IDE, just like a ProMicro/Leonardo board. More details in the MiSTress documentation.
